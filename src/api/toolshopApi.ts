@@ -17,4 +17,44 @@ export class ToolshopApi {
     expect(res.status()).toBe(200);
     return await res.json(); // { data: [...] ... }
   }
+
+  async getCategories(token: string) {
+    const res = await this.api.get(`${this.baseUrl}/categories`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/json',
+      },
+    });
+    expect(res.status()).toBe(200);
+    return await res.json(); // array
+  }
+
+  async searchProducts(token: string, q: string) {
+    const res = await this.api.get(
+      `${this.baseUrl}/products/search?q=${encodeURIComponent(q)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+      }
+    );
+    expect(res.status()).toBe(200);
+    return await res.json(); // { data: [...] }
+  }
+
+  async getProductsByCategory(token: string, categoryId: string) {
+    const res = await this.api.get(
+      `${this.baseUrl}/products?by_category=${encodeURIComponent(categoryId)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          accept: 'application/json',
+        },
+      }
+    );
+    expect(res.status()).toBe(200);
+    return await res.json(); // { data: [...] }
+  }
 }
+

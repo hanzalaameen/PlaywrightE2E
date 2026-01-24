@@ -17,7 +17,6 @@ function randomEmail() {
 }
 
 function moneyToNumber(text: string): number {
-  // "$14.15" -> 14.15   |  "1,234.50" -> 1234.50
   const m = text.replace(/,/g, '').match(/(\d+(\.\d+)?)/);
   return m ? Number(m[1]) : NaN;
 }
