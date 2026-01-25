@@ -20,7 +20,7 @@ It validates **UI workflows** and **backend data integrity** by cross-checking U
 ```
 tests/
   scenario1.purchase.spec.ts
-  scenario2.inventory.spec.ts
+  scenario2.search.spec.ts
 
 pages/
   login.page.ts
@@ -79,7 +79,7 @@ npx playwright test
 Run specific scenarios:
 ```bash
 npx playwright test tests/scenario1.purchase.spec.ts
-npx playwright test tests/scenario2.inventory.spec.ts
+npx playwright test tests/scenario2.search.spec.ts
 ```
 
 Run in headed mode:
