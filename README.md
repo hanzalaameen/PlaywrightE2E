@@ -118,7 +118,7 @@ Validates a complete category selection and search workflow and ensures UI match
 Login → Home / Catalog → Select Category: Hammer → Product Grid Updated → Count Products (UI) → API Login → Get Categories → Resolve Hammer Category ID → Get Products by Category → UI Count = API Count
 
 ## User Flow: 2B
-Login → Home / Catalog → Search: "sledge" → Search Results Displayed (UI) → Capture Product Names → API Login → Search Products ("sledge") → UI Results ⊆ API Results
+Login → Home / Catalog → Search: "sledge" → Search Results Displayed (UI) → Capture Product Names → API Login → Search Products ("sledge") → UI Results = API Results
 
 ### Category Filter (Hammer)
 - UI product count vs API product count
