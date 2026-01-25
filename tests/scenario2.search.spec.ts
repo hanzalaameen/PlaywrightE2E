@@ -7,7 +7,7 @@ import { CatalogSidebar } from '../components/CatalogSidebar';
 import { ProductGrid } from '../components/ProductGrid';
 import { ToolshopApi } from '../src/api/toolshopApi';
 
-test.setTimeout(120000);
+test.setTimeout(70000);
 
 function randomEmail() {
   return `testing+${Date.now()}@mailinator.com`;
@@ -55,9 +55,7 @@ test('Scenario 2 - Inventory Accuracy (Category + Search) UI vs API', async ({ p
   };
 
   try {
-    // ---------------------------
-    // UI SETUP
-    // ---------------------------
+
     await test.step('Register user via UI', async () => {
       await login.goto();
       await login.goToRegister();
@@ -84,9 +82,7 @@ test('Scenario 2 - Inventory Accuracy (Category + Search) UI vs API', async ({ p
       await home.assertLoaded();
     });
 
-    // ---------------------------
-    // API AUTH (ONCE)
-    // ---------------------------
+//API AUTH
     const token = await test.step('API login (get token)', async () => {
       const t = await api.login(email, password);
       expect(t).toBeTruthy();
@@ -98,7 +94,7 @@ test('Scenario 2 - Inventory Accuracy (Category + Search) UI vs API', async ({ p
     // ---------------------------
     await test.step('UI: select Hammer category and capture product count', async () => {
       await sidebar.selectCategory('Hammer');
-      await page.waitForTimeout(2000); // controlled, small delay
+      await page.waitForTimeout(2000);
       const uiCount = await grid.countProducts();
       expect(uiCount).toBeGreaterThan(0);
 

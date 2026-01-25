@@ -32,12 +32,12 @@ test('Scenario 1 Purchase', async ({ page }, testInfo) => {
   const billing = new BillingAddressPage(page);
   const payment = new PaymentPage(page);
 
+
   const email = randomEmail();
-  const password = 'Start123)(*&'; // must satisfy rules shown on register screen
+  const password = 'Start123)(*&';
 
   const runSummary: any = {
     createdUserEmail: email,
-    // passwordUsed: password, // optional — I recommend NOT storing it in reports
     ui: {
       cartTotalText: null,
       cartTotal: null,
@@ -67,7 +67,7 @@ test('Scenario 1 Purchase', async ({ page }, testInfo) => {
         postalCode: '12345',
         city: 'test',
         state: 'test',
-        countryLabel: 'Albania', // if this fails, we’ll change strategy
+        countryLabel: 'Albania',
         phone: '123456789',
         email,
         password,
