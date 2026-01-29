@@ -6,7 +6,7 @@ export class ProductGrid {
 
   constructor(page: Page) {
     this.cards = page.locator('.card');
-    this.titles = page.locator('.card .card-title'); // ✅ title only
+    this.titles = page.locator('.card .card-title');
   }
 
   async countProducts(): Promise<number> {

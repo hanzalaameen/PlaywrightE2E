@@ -21,6 +21,7 @@ function moneyToNumber(text: string): number {
   return m ? Number(m[1]) : NaN;
 }
 
+
 test('Scenario 1 Purchase', async ({ page }, testInfo) => {
   const login = new LoginPage(page);
   const register = new RegisterPage(page);

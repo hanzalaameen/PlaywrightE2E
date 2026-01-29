@@ -15,7 +15,7 @@ export class ToolshopApi {
       headers: { Authorization: `Bearer ${token}` },
     });
     expect(res.status()).toBe(200);
-    return await res.json(); // { data: [...] ... }
+    return await res.json();
   }
 
   async getCategories(token: string) {
@@ -26,7 +26,7 @@ export class ToolshopApi {
       },
     });
     expect(res.status()).toBe(200);
-    return await res.json(); // array
+    return await res.json(); 
   }
 
   async searchProducts(token: string, q: string) {
@@ -40,7 +40,7 @@ export class ToolshopApi {
       }
     );
     expect(res.status()).toBe(200);
-    return await res.json(); // { data: [...] }
+    return await res.json();
   }
 
   async getProductsByCategory(token: string, categoryId: string) {
@@ -54,7 +54,7 @@ export class ToolshopApi {
       }
     );
     expect(res.status()).toBe(200);
-    return await res.json(); // { data: [...] }
+    return await res.json();
   }
 }
 

@@ -27,6 +27,7 @@ test('Scenario 2 - Inventory Accuracy (Category + Search) UI vs API', async ({ p
   const email = randomEmail();
   const password = 'Start123)(*&';
 
+
   const runSummary: any = {
     ui: {
       category: {

@@ -10,8 +10,6 @@ export class ProductPage {
     this.page = page;
 
     this.addToCartBtn = page.getByRole('button', { name: /add to cart/i });
-
-    // Cart icon/link in navbar usually navigates to /checkout
     this.cartLink = page.locator('a[href="/checkout"]');
   }
 

@@ -9,18 +9,13 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-
     this.emailInput = page.getByLabel(/Email address/i);
     this.passwordInput = page.getByLabel(/^Password/i);
-
-    // ✅ stable because you shared the exact HTML
     this.loginBtn = page.locator('[data-test="login-submit"]');
-
     this.registerLink = page.getByRole('link', { name: /Register your account/i });
   }
 
   async goto() {
-    // If your app uses "/#/auth/login", change ONLY here.
     await this.page.goto('/auth/login');
     await expect(this.page.getByRole('heading', { name: /Login/i })).toBeVisible();
   }

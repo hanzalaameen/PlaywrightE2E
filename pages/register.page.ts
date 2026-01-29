@@ -64,7 +64,6 @@ export class RegisterPage {
     await this.city.fill(user.city);
     await this.state.fill(user.state);
 
-    // dropdown
     await this.country.selectOption({ label: user.countryLabel });
 
     await this.phone.fill(user.phone);
@@ -72,8 +71,6 @@ export class RegisterPage {
     await this.password.fill(user.password);
 
     await this.registerBtn.click();
-
-    // After register, app usually redirects to login.
     await expect(this.page.getByRole('heading', { name: /Login/i })).toBeVisible();
   }
 }

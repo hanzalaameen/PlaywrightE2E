@@ -6,9 +6,6 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-
-    // “first product” on listing page.
-    // This is intentionally generic; if it ever clicks wrong, we’ll tighten it.
     this.firstProductLink = page.locator('a[href*="/product/"]').first();
   }
 

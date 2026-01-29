@@ -22,7 +22,6 @@ export class PaymentPage {
   }
 
   async confirmTwiceAndGetInvoice(): Promise<string> {
-    // 1st click -> show success message
     await this.confirmBtn.scrollIntoViewIfNeeded();
     await this.confirmBtn.click();
     await expect(this.successAlert).toBeVisible();
